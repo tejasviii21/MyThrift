@@ -1,19 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
 import Header from './Header';
 import Home from "./Home";
-
-function App() {
+import { BrowserRouter as Router, Routes ,Route } from "react-router-dom";
+import Checkout from "./Checkout";
+function  App() {
   return (
-    //BEM
-    <div className="app">
-      
-      <Header/>
-      <Home />
-      
-      
-    </div>
+    
+    
+      <div className="app">
+        <Router>
+        {""}
+        <Header/>
+        <Routes>
+          <Route path="/checkout"
+          element={<>
+          <Checkout/></>}
+          />
+          <Route path="/" element={<><Home/></>}/>
+          </Routes>
+          </Router>
+      </div>
+    
   );
 }
-
 export default App;
